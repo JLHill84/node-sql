@@ -8,6 +8,9 @@ variables:
 
 steps:
 - task: PowerShell@2
+  env:
+    ADO-PAT: $(ADO-PAT)
+    GitHub-PAT: $(GitHub-PAT)
   inputs:
     targetType: 'inline'
     script: |
