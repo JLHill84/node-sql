@@ -18,12 +18,16 @@ steps:
       $stageDir = '$(Build.SourcesDirectory)' | Split-Path
       $githubDir = $stageDir +"\"+"gitHub"
       $destination = $githubDir +"\"+"node-sql.git"
+
       #please provide your username
       $alias = 'JLHill84:'+ "$(GitHub_PAT)"
+
       #Please make sure, you remove https from azure-repo-clone-url
       $sourceURL = 'https://$(ADO_PAT)@jhill-ado@dev.azure.com/jhill-ado/pulumi-tron/_git/node-sql'
-      #Please make sure, you remove https from github-repo-clone-url
+
+      # Please make sure, you remove https from github-repo-clone-url
       $destURL = 'https://' + $alias + '@github.com/JLHill84/node-sql.git'
+
       #Check if the parent directory exists and delete
       if((Test-Path -path $githubDir))
       {
