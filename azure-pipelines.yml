@@ -11,9 +11,9 @@
       $githubDir = $stageDir +"\"+"gitHub"
       $destination = $githubDir +"\"+"node-sql.git"
       #please provide your username
-      $alias = 'me@joshuahill.dev:'+ "$(Github.PAT)"
+      $alias = 'me@joshuahill.dev:'+ "$(GitHub-PAT)"
       #Please make sure, you remove https from azure-repo-clone-url
-      $sourceURL = 'https://$(AzureDevOps.PAT)@jhill-ado@dev.azure.com/jhill-ado/pulumi-tron/_git/node-sql'
+      $sourceURL = 'https://$(ADO-PAT)@jhill-ado@dev.azure.com/jhill-ado/pulumi-tron/_git/node-sql'
       #Please make sure, you remove https from github-repo-clone-url
       $destURL = 'https://' + $alias + '@github.com/JLHill84/node-sql.git'
       #Check if the parent directory exists and delete
@@ -46,23 +46,3 @@
       {
        Remove-Item -Path $githubDir -Recurse -force
       }
-# Build a general Node.js project with npm.
-# Add steps that analyze code, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
-
-# trigger:
-# - main
-
-# pool:
-#   vmImage: ubuntu-default
-
-# steps:
-# - task: NodeTool@0
-#   inputs:
-#     versionSpec: '10.x'
-#   displayName: 'Install Node.js'
-
-# - script: |
-#     npm install
-#     npm run build
-#   displayName: 'npm install and build'
