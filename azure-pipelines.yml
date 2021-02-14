@@ -22,6 +22,9 @@ steps:
       $githubDir = $stageDir +"\"+"gitHub"
       $destination = $githubDir +"\"+"node-sql.git"
 
+      Write-Host $env:GitHub-PAT
+      Write-Host $env:ADO-PAT
+
       #please provide your username
       $alias = 'JLHill84:'+ "$env:GitHub-PAT"
 
