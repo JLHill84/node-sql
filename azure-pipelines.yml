@@ -2,15 +2,11 @@
 trigger:
 - main
 
-# variables:
-#   ADO-PAT: $(ADO-PAT)
-#   GitHub-PAT: $(GitHub-PAT)
-
 steps:
 - task: PowerShell@2
   env:
-    ADO-PAT: $(ADO-PAT)
-    GitHub-PAT: $(GitHub-PAT)
+    ADO_PAT: $(ADO_PAT)
+    GitHub_PAT: $(GitHub_PAT)
   inputs:
     targetType: 'inline'
     script: |
@@ -22,14 +18,14 @@ steps:
       $githubDir = $stageDir +"\"+"gitHub"
       $destination = $githubDir +"\"+"node-sql.git"
 
-      Write-Host $env:GitHub-PAT
-      Write-Host $env:ADO-PAT
+      Write-Host ${env:GitHub_PAT}
+      Write-Host ${env:ADO_PAT}
 
       #please provide your username
-      $alias = 'JLHill84:'+ "$env:GitHub-PAT"
+      $alias = 'JLHill84:'+ "${env:GitHub_PAT}"
 
       #Please make sure, you remove https from azure-repo-clone-url
-      $sourceURL = 'https://$env:ADO-PAT@jhill-ado@dev.azure.com/jhill-ado/pulumi-tron/_git/node-sql'
+      $sourceURL = 'https://${env:ADO_PAT}@jhill-ado@dev.azure.com/jhill-ado/pulumi-tron/_git/node-sql'
 
       # Please make sure, you remove https from github-repo-clone-url
       $destURL = 'https://' + $alias + '@github.com/JLHill84/node-sql.git'
