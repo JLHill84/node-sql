@@ -2,6 +2,10 @@
 trigger:
 - main
 
+variables:
+  ADO-PAT = $(ADO-PAT)
+  GitHub-PAT = $(GitHub-PAT)
+
 steps:
 - task: PowerShell@2
   inputs:
