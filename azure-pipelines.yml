@@ -3,8 +3,8 @@ trigger:
 - main
 
 variables:
-  ADO_PAT = $(ADO-PAT)
-  GitHub_PAT = $(GitHub-PAT)
+  ADO_PAT: $(ADO-PAT)
+  GitHub_PAT: $(GitHub-PAT)
 
 steps:
 - task: PowerShell@2
