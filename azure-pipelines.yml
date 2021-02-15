@@ -18,17 +18,17 @@ steps:
       $githubDir = $stageDir +"\"+"gitHub"
       $destination = $githubDir +"\"+"node-sql.git"
 
-      Write-Host ${env:GitHub_PAT}
-      Write-Host ${env:ADO_PAT}
-
       #please provide your username
       $alias = 'JLHill84:'+ "${env:GitHub_PAT}"
+      Write-Host $alias
 
       #Please make sure, you remove https from azure-repo-clone-url
       $sourceURL = 'https://${env:ADO_PAT}@jhill-ado@dev.azure.com/jhill-ado/pulumi-tron/_git/node-sql'
+      Write-Host $sourceURL
 
       # Please make sure, you remove https from github-repo-clone-url
       $destURL = 'https://' + $alias + '@github.com/JLHill84/node-sql.git'
+      Write-Host $destURL
 
       #Check if the parent directory exists and delete
       if((Test-Path -path $githubDir))
