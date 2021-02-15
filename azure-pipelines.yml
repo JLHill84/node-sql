@@ -23,7 +23,7 @@ steps:
       Write-Host $alias
 
       #Please make sure, you remove https from azure-repo-clone-url
-      $sourceURL = "https://$env:ADO_PAT@jhill-ado@dev.azure.com/jhill-ado/pulumi-tron/_git/node-sql"
+      $sourceURL = "https://$env:ADO_PAT@dev.azure.com/jhill-ado/pulumi-tron/_git/node-sql"
       Write-Host $sourceURL
 
       # Please make sure, you remove https from github-repo-clone-url
